@@ -3,8 +3,8 @@ import 'package:dating_app/app_constant_values/color_constants.dart';
 import 'package:dating_app/app_constant_values/text_style_constants.dart';
 import 'package:dating_app/app_constant_values/numerical_constants.dart';
 
-class RegistrationPage6 extends StatefulWidget {
-  RegistrationPage6({Key key, this.title}) : super(key: key);
+class RegistrationPage7 extends StatefulWidget {
+  RegistrationPage7({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -19,10 +19,10 @@ class RegistrationPage6 extends StatefulWidget {
   final String title;
 
   @override
-  _RegistrationPage6State createState() => _RegistrationPage6State();
+  _RegistrationPage7State createState() => _RegistrationPage7State();
 }
 
-class _RegistrationPage6State extends State<RegistrationPage6>
+class _RegistrationPage7State extends State<RegistrationPage7>
     with SingleTickerProviderStateMixin {
   @override
   void initState() {
@@ -74,73 +74,56 @@ class _RegistrationPage6State extends State<RegistrationPage6>
         children: <Widget>[
           SizedBox(height: 34),
           Text(
-            'Introduction Message',
+            'Terms and Conditions',
             style: AppFonts.titleBlackFont,
             textAlign: TextAlign.center,
           ),
           Text(
-            '(Add a text or video introduction of yourself to your profile.)',
+            '(Please read the following terms and conditions and if you accept hit the "Accept and Register" button. )',
             style: AppFonts.italicBlackFont,
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 30),
-          Container(
-            height: 400,
-            width: 200,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: AppColors.appAqua,
-                width: 1.0,
-              ),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                    height: 320,
-                    width: 200,
-                  alignment: Alignment.center,
-                  child:  Text("Text or Video Introduction"),
-                ),
-                Container(
-                  alignment: Alignment.bottomRight,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      IconButton(
-                        icon: Icon(Icons.edit),
-                        iconSize: 40,
-                        onPressed: () {},
-                        //TODO: implement onPressed
-                        color: AppColors.appBlue100,
-                      ),
-                      SizedBox(width: 20),
-                      IconButton(
-                        icon: Icon(Icons.video_library),
-                        iconSize: 40,
-                        onPressed: () {},
-                        //TODO: implement onPressed
-                        color: AppColors.appBlue100,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
+              Text("T&Cs statement"),
+              SizedBox(height: 30),
 
+            ],
           ),
           SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                width: 220,
+                width: 320,
                 height: 48.0,
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed("/RegistrationPage7");
+                    Navigator.of(context).pushNamed("/RegistrationPage5");
                   },
                   color: AppColors.appBlue100,
                   shape: RoundedRectangleBorder(
@@ -148,7 +131,7 @@ class _RegistrationPage6State extends State<RegistrationPage6>
                         BorderRadius.circular(AppConstants.btnBorderRadius),
                   ),
                   child: Text(
-                    'Continue',
+                    'Accept and Register',
                     style: AppFonts.titleWhiteFont,
                     textAlign: TextAlign.center,
                   ),

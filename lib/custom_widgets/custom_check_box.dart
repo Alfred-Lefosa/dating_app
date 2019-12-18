@@ -1,50 +1,48 @@
-//TODO: add the implement the onchanged resposnce...
-//TODO: make default color appblue100
-//TODO: Make other necessary modifications
 //TODO: Add documentation/ Explanation
+//TODO: make value and groupvalue general
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:dating_app/app_constant_values/color_constants.dart';
 
-class CustomCheckBox<T> extends StatefulWidget {
+class CustomCheckBox extends StatefulWidget {
   final String label;
-  final T value;
+  final String value;
   final double height;
   final double width;
   final Color color;
-  final double cornerRadius;
-  bool state;
+  final bool isChecked;
+  final Function(String text) onChanged;
 
   CustomCheckBox({
-    this.label = 'Radio',
+    this.label = 'CheckBox',
     @required this.value,
     @required this.onChanged,
+    @ required this.isChecked,
     this.height = 24,
     this.width = 24,
-    this.cornerRadius = 0.0,
     this.color = AppColors.appBlue100,
-    this.state = false,
-  });
 
-  final ValueChanged<T> onChanged;
+  });
 
 
 
   @override
-  _CustomCheckBoxState<T> createState() => _CustomCheckBoxState<T>();
+  _CustomCheckBoxState createState() => _CustomCheckBoxState();
 }
 
-class _CustomCheckBoxState<T> extends State<CustomCheckBox<T>>
+class _CustomCheckBoxState extends State<CustomCheckBox>
     with TickerProviderStateMixin {
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         setState(() {
-          widget.state = !widget.state;
+          if(widget.isChecked){
+            widget.onChanged(null);
+          }else{
+            widget.onChanged(widget.value);
+          }
         });
       },
       child: Container(
@@ -56,10 +54,9 @@ class _CustomCheckBoxState<T> extends State<CustomCheckBox<T>>
               height: widget.height,
               width: widget.width,
               decoration: BoxDecoration(
-                  color: widget.state ? widget.color : Colors.transparent,
-                  border: Border.all(width: 2.0, color: widget.color),
-                  borderRadius:
-                      BorderRadius.all(Radius.circular(widget.cornerRadius))),
+                color: widget.isChecked ? widget.color : Colors.transparent,
+                border: Border.all(width: 2.0, color: widget.color),
+              ),
             ),
             Container(
               margin: EdgeInsets.only(left: 20.0),
@@ -71,6 +68,3 @@ class _CustomCheckBoxState<T> extends State<CustomCheckBox<T>>
     );
   }
 }
-
-//TODO: use theme data to set default color
-//TODO: add ischecked variable to checkbox,
